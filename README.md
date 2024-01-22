@@ -16,4 +16,6 @@ i use this line
 ```
 systemctl edit getty@.service to change the ExecStart=- line to /sbin/agetty -a $DESIRED_USERNAME --noclear %I $TERM
 ```
-of course you replace DESIRED_USERNAME with yous.
+of course you replace DESIRED_USERNAME with yours.
+
+
