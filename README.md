@@ -20,7 +20,9 @@ of course you replace DESIRED_USERNAME with yours.
 
 Power Button :
 For the power button i followed this : https://embeddedcomputing.com/technology/open-source/development-kits/raspberry-pi-power-up-and-shutdown-with-a-physical-button
+
 Be aware that under Ubuntu the config.txt file is or must be created here : /boot/firmware/config.txt
+
 i use these lines
 ```
 [all]
