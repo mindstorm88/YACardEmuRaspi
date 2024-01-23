@@ -3,6 +3,8 @@ This repo is to keep track of what i needed to do to use YACardEmu with a Raspbe
 
 here is the official repo of YACardEmu https://github.com/GXTX/YACardEmu
 
+At any point after the operating system is up and running, you can install YACardEmu
+
 The goal is to have a Raspberri Pi3+ stand alone , no screen, no kb, only 1 button to power up and power down to stanby mode.
 
 Operating system :
@@ -37,4 +39,57 @@ dtparam=spi=on
 dtoverlay=gpio-shutdown
 gpio=15=op,dh
 ```
-With Ubuntu the line #dtparam=i2c_arm=on must be commented, as it won't accept it as powerdown switch . Reason being that it would be allocated to the i2c
+With Ubuntu the line #dtparam=i2c_arm=on must be commented, as it won't accept it as powerdown switch . Reason being that it would be allocated to the i2c.
+
+Now we need to have YACardEmu autostarted after bootup. This is done via rc.local.
+This file must be created in this directory : /etc/rc.local
+Put this code in rc.local
+```
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+cd home/bsl88k/YACardEmu/build
+./YACardEmu &
+
+exit 0
+```
+At this point we need rc.local to be executed at bootup.
+I did follow this : https://www.linuxbabe.com/linux-server/how-to-enable-etcrc-local-with-systemd
+
+Add execute permission to /etc/rc.local file.
+```
+sudo chmod +x /etc/rc.local
+```
+After that, enable the service on system boot:
+```
+sudo systemctl enable rc-local
+```
+Almost Done
+
+My system had a really slow boot cause by a wait for network, i was getting this message "A start job is running for wait for network to be configured" that stays for about 2 minutes
+
+the solution to this is here : https://askubuntu.com/questions/972215/a-start-job-is-running-for-wait-for-network-to-be-configured-ubuntu-server-17-1
+
+these lines stopped it 
+
+Use
+```
+systemctl disable systemd-networkd-wait-online.service
+```
+to disable the wait-online service to prevent the system from waiting on a network connection, and use
+```
+systemctl mask systemd-networkd-wait-online.service
+```
+to prevent the service from starting if requested by another service (the service is symlinked to /dev/null).
+
+NOW we have a standalone system in a small box control by 1 push button.
