@@ -102,3 +102,5 @@ systemctl mask systemd-networkd-wait-online.service
 to prevent the service from starting if requested by another service (the service is symlinked to /dev/null).
 
 # NOW we have a standalone system in a small box control by 1 push button.
+
+A big THANKS to user "whatnot" from https://www.arcade-projects.com/threads/naomi-2-chihiro-triforce-card-reader-emulator-initial-d3-wmmt-mario-kart-f-zero-ax.814/ , for his help and patience to respond my multiple questions.
