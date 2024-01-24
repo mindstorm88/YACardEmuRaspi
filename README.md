@@ -103,6 +103,10 @@ to prevent the service from starting if requested by another service (the servic
 
 # NOW we have a standalone system in a small box control by 1 push button.
 
+Here my setup : 
+![image](https://github.com/mindstorm88/YACardEmuRaspi/assets/49786581/f17e005d-fdca-410e-a9d0-2c0865530839)
+
+
 How a card looks in the UI
 ![bruno bin](https://github.com/mindstorm88/YACardEmuRaspi/assets/49786581/26605919-77ba-4732-9db1-67c647da0175)
 
