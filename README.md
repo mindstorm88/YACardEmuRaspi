@@ -111,4 +111,4 @@ How a card looks in the UI
 ![bruno bin](https://github.com/mindstorm88/YACardEmuRaspi/assets/49786581/26605919-77ba-4732-9db1-67c647da0175)
 
 
-A big THANKS to user "whatnot" from https://www.arcade-projects.com/threads/naomi-2-chihiro-triforce-card-reader-emulator-initial-d3-wmmt-mario-kart-f-zero-ax.814/ , for his help and patience to respond my multiple questions.
+A big THANKS to user/creator "whatnot" from https://www.arcade-projects.com/threads/naomi-2-chihiro-triforce-card-reader-emulator-initial-d3-wmmt-mario-kart-f-zero-ax.814/ , for his help and patience to respond my multiple questions.
